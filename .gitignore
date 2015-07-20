@@ -1,0 +1,13 @@
+Makefile
+config.h
+config.log
+config.status
+libtool
+libtstat-demo/.deps/
+libtstat-demo/Makefile
+libtstat/.deps/
+libtstat/Makefile
+libtstat/libtstat.pc
+stamp-h1
+tstat/.deps/
+tstat/Makefile
