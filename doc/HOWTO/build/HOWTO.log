@@ -1,0 +1,335 @@
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=latex 2014.1.28)  26 JUN 2015 14:04
+entering extended mode
+ %&-line parsing enabled.
+**HOWTO
+(./HOWTO.tex
+LaTeX2e <2005/12/01>
+Babel <v3.8h> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, arabic, basque, bulgarian, coptic, welsh, czech, slovak, german, ng
+erman, danish, esperanto, spanish, catalan, galician, estonian, farsi, finnish,
+ french, greek, monogreek, ancientgreek, croatian, hungarian, interlingua, ibyc
+us, indonesian, icelandic, italian, latin, mongolian, dutch, norsk, polish, por
+tuguese, pinyin, romanian, russian, slovenian, uppersorbian, serbian, swedish, 
+turkish, ukenglish, ukrainian, loaded.
+(/usr/share/texmf/tex/latex/base/article.cls
+Document Class: article 2005/09/16 v1.4f Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size11.clo
+File: size11.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf/tex/latex/ltxmisc/a4wide.sty
+Package: a4wide 1994/08/30
+
+(/usr/share/texmf/tex/latex/ntgclass/a4.sty
+Package: a4 2004/04/15 v1.2g A4 based page layout
+))
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: dvips.def on input line 90.
+
+(/usr/share/texmf/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+) (./HOWTO.aux)
+\openout1 = `HOWTO.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+File: tstat_banner.eps Graphic file (type eps)
+
+<tstat_banner.eps> (./HOWTO.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 2.
+ [1
+
+])
+\tf@toc=\write3
+\openout3 = `HOWTO.toc'.
+
+ [2]
+LaTeX Font Info:    Try loading font information for OT1+ppl on input line 21.
+
+(/usr/share/texmf/tex/latex/psnfss/ot1ppl.fd
+File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
+) [3
+
+]
+Overfull \hbox (10.15074pt too wide) in paragraph at lines 167--170
+[]\OT1/ppl/m/n/10.95 The build-ing of Libt-stat is sep-a-rated from the build-i
+ng of Tstat so \OT1/cmtt/m/n/10.95 libtstat/Makefile.conf
+ []
+
+[4]
+Overfull \hbox (30.99324pt too wide) in paragraph at lines 190--194
+\OT1/ppl/m/n/10.95 The de-fault \OT1/cmtt/m/n/10.95 prefix \OT1/ppl/m/n/10.95 f
+or in-stal-la-tion is \OT1/cmtt/m/n/10.95 /usr/local \OT1/ppl/m/n/10.95 so Tsta
+t ex-e-cutable in in-stalled in \OT1/cmtt/m/n/10.95 /usr/local/bin
+ []
+
+
+Overfull \hbox (54.11462pt too wide) in paragraph at lines 203--205
+[]\OT1/ppl/m/n/10.95 Libtstat is pro-vided with \OT1/cmtt/m/n/10.95 pkg-config 
+\OT1/ppl/m/n/10.95 sup-port so a \OT1/cmtt/m/n/10.95 libtstat.pc \OT1/ppl/m/n/1
+0.95 is in-stalled in \OT1/cmtt/m/n/10.95 /usr/lib/pkg-config
+ []
+
+[5] [6]
+Overfull \hbox (24.59218pt too wide) in paragraph at lines 331--331
+[]                 \OT1/cmtt/m/n/10 will be whitelisted and *NOT* anonymized us
+ing the Crypto-PAn algorithm.[] 
+ []
+
+[7] [8]
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 432.
+
+Overfull \hbox (4.32687pt too wide) in paragraph at lines 432--432
+[]\OT1/ppl/b/n/10.95 of lines with $\OML/cmm/m/it/10.95 <$\OT1/ppl/b/n/10.95 Ne
+twork IP$\OML/cmm/m/it/10.95 >$ \OT1/ppl/b/n/10.95 and $\OML/cmm/m/it/10.95 <$\
+OT1/ppl/b/n/10.95 NetMask$\OML/cmm/m/it/10.95 >$ 
+ []
+
+[9]
+Overfull \hbox (19.34222pt too wide) in paragraph at lines 494--494
+[]                \OT1/cmtt/m/n/10 DPMI             Distributed Passive Measure
+ment Interface (DPMI) format[] 
+ []
+
+[10]
+Missing character: There is no â in font pplr7t!
+Missing character: There is no € in font pplr7t!
+Missing character: There is no ˜ in font pplr7t!
+Missing character: There is no â in font pplr7t!
+Missing character: There is no € in font pplr7t!
+Missing character: There is no ™ in font pplr7t!
+Missing character: There is no â in font pplr7t!
+Missing character: There is no € in font pplr7t!
+Missing character: There is no ˜ in font pplr7t!
+Missing character: There is no â in font pplr7t!
+Missing character: There is no € in font pplr7t!
+Missing character: There is no ™ in font pplr7t!
+
+Overfull \hbox (50.84195pt too wide) in paragraph at lines 588--588
+[]    \OT1/cmtt/m/n/10 ./tstat -N net.conf trace1.pcap trace2.pcap # output dir
+: trace1.pcap.out, trace2.pcap.out[] 
+ []
+
+[11]
+File: tstat_output.eps Graphic file (type eps)
+ <tstat_output.eps> [12]
+Overfull \hbox (58.14879pt too wide) in paragraph at lines 680--691
+\OT1/ppl/m/n/10.95 Tstat cre-ates a set of TXT flow files in the main out-put d
+i-rec-tory: \OT1/cmtt/m/n/10.95 log[]tcp[]complete\OT1/ppl/m/n/10.95 , \OT1/cmt
+t/m/n/10.95 log[]tcp[]nocomplete\OT1/ppl/m/n/10.95 ,
+ []
+
+
+Overfull \hbox (43.93729pt too wide) in paragraph at lines 680--691
+\OT1/cmtt/m/n/10.95 log[]udp[]complete\OT1/ppl/m/n/10.95 , \OT1/cmtt/m/n/10.95 
+log[]mm[]complete\OT1/ppl/m/n/10.95 , \OT1/cmtt/m/n/10.95 log[]video[]complete\
+OT1/ppl/m/n/10.95 , \OT1/cmtt/m/n/10.95 log[]skype[]complete\OT1/ppl/m/n/10.95 
+, \OT1/cmtt/m/n/10.95 log[]chat[]complete
+ []
+
+
+Overfull \hbox (47.34799pt too wide) in paragraph at lines 694--700
+[]\OT1/ppl/m/n/10.95 Furthermore the fol-low-ing log files are cre-ated: \OT1/c
+mtt/m/n/10.95 log[]video[]complete \OT1/ppl/m/n/10.95 and \OT1/cmtt/m/n/10.95 l
+og[]streaming[]complete
+ []
+
+
+Overfull \hbox (26.05466pt too wide) in paragraph at lines 703--705
+[]\OT1/ppl/m/n/10.95 Description of the file for-mat of each log file can be fo
+und in \OT1/cmss/m/n/10.95 http://tstat.polito.it/measure.shtml\OT1/ppl/m/n/10.
+95 . 
+ []
+
+[13]
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 735.
+ [14] [15] [16]
+Overfull \hbox (24.88443pt too wide) in paragraph at lines 964--970
+\OT1/ppl/m/n/10.95 URLs can-not be logged in \OT1/cmtt/m/n/10.95 log[]http[]com
+plete\OT1/ppl/m/n/10.95 , and the YouTube Video IDs in \OT1/cmtt/m/n/10.95 log[
+]video[]complete
+ []
+
+[17]
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 101
+9.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 1019.
+
+
+LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbraceleft' on input line 1019.
+
+
+Overfull \hbox (8.57347pt too wide) in paragraph at lines 1061--1065
+[]\OT1/ppl/m/n/10.95 Finally, con-sider that on a com-mon PC ar-chi-tec-ture (s
+pecif-i-cally, In-tel P4 2.40GHz equipped
+ []
+
+[18] [19]
+LaTeX Font Info:    Try loading font information for OMS+ppl on input line 1175
+.
+ (/usr/share/texmf/tex/latex/psnfss/omsppl.fd
+File: omsppl.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1175.
+
+
+Overfull \hbox (36.01988pt too wide) in paragraph at lines 1216--1224
+\OT1/ppl/m/n/10.95 larly for the di-rec-tory where the ren-dered im-ages should
+ be stored (de-faults to \OT1/cmtt/m/n/10.95 cgi-bin/rrd[]images\OT1/ppl/m/n/10
+.95 )
+ []
+
+[20] [21]
+Overfull \hbox (3.59236pt too wide) in paragraph at lines 1291--1291
+[]    \OT1/cmtt/m/n/10 httplog_full_url = 0        # Partial (=1) or full (=2) 
+URLs in log_http_complete[] 
+ []
+
+[22]
+Overfull \hbox (20.39487pt too wide) in paragraph at lines 1380--1388
+\OT1/ppl/m/n/10.95 af-ter the 3-way hand-shak-ing fin-ished, so saved flows wou
+ld be in-com-plete. \OT1/cmtt/m/n/10.95 tcp[]videostreaming
+ []
+
+[23]
+Overfull \hbox (8.84232pt too wide) in paragraph at lines 1447--1447
+[]     \OT1/cmtt/m/n/10 stop_dumping_mask = 262142  # => 11 1111 1111 1111 1110
+ log only UNKNOWN and HTTP[] 
+ []
+
+
+Overfull \hbox (24.59218pt too wide) in paragraph at lines 1447--1447
+[]     \OT1/cmtt/m/n/10 stop_dumping_mask = 0x3DFFF # => 11 1101 1111 1111 1111
+ log only UNKNOWN and SSL/TLS[] 
+ []
+
+
+Overfull \hbox (45.592pt too wide) in paragraph at lines 1447--1447
+[]     \OT1/cmtt/m/n/10 stop_dumping_mask = 1       # => 00 0000 0000 0000 0001
+ log everything which is not HTTP[] 
+ []
+
+[24]
+Overfull \hbox (8.84232pt too wide) in paragraph at lines 1495--1495
+[]    \OT1/cmtt/m/n/10 gc_split_ratio = 10000      # Number of partitions of th
+e Garbage Collection cycle[] 
+ []
+
+
+Overfull \hbox (40.34204pt too wide) in paragraph at lines 1506--1506
+[]    \OT1/cmtt/m/n/10 max_internal_ethers = 20    # Max number of Ethernet add
+resses for internal traffic (-M)[] 
+ []
+
+
+Overfull \hbox (29.84213pt too wide) in paragraph at lines 1506--1506
+[]    \OT1/cmtt/m/n/10 max_crypto_cache_size = 130000      # Size of the LRU ca
+che used in address encryption[] 
+ []
+
+
+Overfull \hbox (29.84213pt too wide) in paragraph at lines 1514--1514
+[]    \OT1/cmtt/m/n/10 dirs = 12                   # Number of Max_Time_Step in
+tervals for each log directory[] 
+ []
+
+
+Overfull \hbox (29.84213pt too wide) in paragraph at lines 1523--1523
+[]    \OT1/cmtt/m/n/10 entropy_sample    = 60      # Number of bytes per packet
+ used for encryption detection[] 
+ []
+
+
+Overfull \hbox (61.34186pt too wide) in paragraph at lines 1523--1523
+[]    \OT1/cmtt/m/n/10 min_delta_t_tcp_dup_pkt = 2000.0    # Interarrival time 
+for TCP DUP detection [microseconds][] 
+ []
+
+
+Overfull \hbox (61.34186pt too wide) in paragraph at lines 1523--1523
+[]    \OT1/cmtt/m/n/10 min_delta_t_udp_dup_pkt = 1000.0    # Interarrival time 
+for UDP DUP detection [microseconds][] 
+ []
+
+[25] [26]
+Overfull \hbox (18.89307pt too wide) in paragraph at lines 1617--1624
+\OT1/ppl/m/n/10.95 tain-ing sev-eral con-fig-u-ra-tion files. A ex-am-ple of co
+n-fig-u-ra-tion is pro-vided un-der the \OT1/cmtt/m/n/10.95 tstat-conf
+ []
+
+[27] [28] [29]
+Overfull \hbox (8.84232pt too wide) in paragraph at lines 1820--1820
+[]    \OT1/cmtt/m/n/10 AC_CHECK_LIB([tstat], [tstat_next_pckt],, AC_MSG_ERROR([
+missing 'tstat' library]))[] 
+ []
+
+[30]
+Overfull \hbox (1.90024pt too wide) in paragraph at lines 1882--1883
+[]\OT1/ppl/m/n/10.95 1: packet is treated as hav-ing in-ter-nal source and in-t
+er-nal des-ti-na-tion (lo-cal packet) 
+ []
+
+[31] [32] (./HOWTO.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 676 strings out of 256217
+ 8449 string characters out of 1917095
+ 60158 words of memory out of 1500000
+ 3991 multiletter control sequences out of 10000+200000
+ 10181 words of font info for 35 fonts, out of 1200000 for 2000
+ 645 hyphenation exceptions out of 8191
+ 25i,5n,21p,230b,357s stack positions out of 5000i,500n,6000p,200000b,15000s
+
+Output written on HOWTO.dvi (32 pages, 99584 bytes).
