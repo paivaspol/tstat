@@ -11,3 +11,4 @@ libtstat/libtstat.pc
 stamp-h1
 tstat/.deps/
 tstat/Makefile
+*.o
