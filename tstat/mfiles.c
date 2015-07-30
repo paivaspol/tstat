@@ -14,7 +14,7 @@
  * Tstat is deeply based on TCPTRACE. The authors would like to thank
  * Shawn Ostermann for the development of TCPTRACE.
  *
-*/
+ */
 
 
 
@@ -57,7 +57,7 @@ MFILE mfc_head;			/* closed files, LEAST recently closed */
 MFILE mfc_tail;			/* closed files, MOST recently closed */
 
 
-void
+  void
 Minit (void)
 {
   mf_head.next = &mf_tail;
@@ -74,16 +74,16 @@ Minit (void)
 
 
 
-MFILE *
+  MFILE *
 Mfopen (char *fname, char *mode)
 {
   MFILE *pmf;
 
   if (strcmp (mode, "w") != 0)
-    {
-      fprintf (fp_stderr, "Sorry, Mfopen works only for mode \"w\"\n");
-      exit (-1);
-    }
+  {
+    fprintf (fp_stderr, "Sorry, Mfopen works only for mode \"w\"\n");
+    exit (-1);
+  }
 
   pmf = (MFILE *) MallocZ (sizeof (MFILE));
 
@@ -98,31 +98,31 @@ Mfopen (char *fname, char *mode)
 
 
 /* not really an mfiles thing, but works even when we're out of fd's */
-int
+  int
 Mfpipe (int pipes[])
 {
   int i;
 
   for (i = 0; i <= 2; ++i)
+  {
+    if (pipe (pipes) == 0)
+      return (0);
+
+    if (errno != EMFILE)
     {
-      if (pipe (pipes) == 0)
-	return (0);
-
-      if (errno != EMFILE)
-	{
-	  fprintf (fp_stderr, "pipe: %s\n", strerror(errno));
-	  exit (-1);
-	}
-
-      M_closeold ();
+      fprintf (fp_stderr, "pipe: %s\n", strerror(errno));
+      exit (-1);
     }
+
+    M_closeold ();
+  }
 
   fprintf (fp_stderr, "mfpipe - internal error, couldn't get pipes?\n");
   exit (-1);
 }
 
 
-int
+  int
 Mfileno (MFILE * pmf)
 {
   /* Warning, I'll GIVE you the fd, but I won't guarantee that it'll stay */
@@ -135,7 +135,7 @@ Mfileno (MFILE * pmf)
 
 
 
-int
+  int
 Mvfprintf (MFILE * pmf, char *format, va_list ap)
 {
   int ret;
@@ -148,7 +148,7 @@ Mvfprintf (MFILE * pmf, char *format, va_list ap)
 
 
 
-int
+  int
 Mfprintf (MFILE * pmf, char *format, ...)
 {
   va_list ap;
@@ -165,7 +165,7 @@ Mfprintf (MFILE * pmf, char *format, ...)
 }
 
 
-long
+  long
 Mftell (MFILE * pmf)
 {
   Mcheck (pmf);
@@ -173,7 +173,7 @@ Mftell (MFILE * pmf)
 }
 
 
-int
+  int
 Mfseek (MFILE * pmf, long offset, int ptrname)
 {
   Mcheck (pmf);
@@ -181,7 +181,7 @@ Mfseek (MFILE * pmf, long offset, int ptrname)
 }
 
 
-int
+  int
 Mfwrite (void *buf, u_long size, u_long nitems, MFILE * pmf)
 {
   Mcheck (pmf);
@@ -189,7 +189,7 @@ Mfwrite (void *buf, u_long size, u_long nitems, MFILE * pmf)
 }
 
 
-int
+  int
 Mfclose (MFILE * pmf)
 {
   int ret;
@@ -204,7 +204,7 @@ Mfclose (MFILE * pmf)
 }
 
 
-int
+  int
 Mfflush (MFILE * pmf)
 {
   Mcheck (pmf);
@@ -213,7 +213,7 @@ Mfflush (MFILE * pmf)
 
 
 
-static void
+  static void
 Mfopen_internal (MFILE * pmf, char *mode)
 {
   FILE *stream;
@@ -221,41 +221,41 @@ Mfopen_internal (MFILE * pmf, char *mode)
   stream = fopen (pmf->fname, mode);
 
   if (stream == NULL)
+  {
+
+    if (errno != EMFILE)
     {
-
-      if (errno != EMFILE)
-	{
-	  fprintf (fp_stderr, "fopen: %s\n", strerror(errno));
-	  exit (-1);
-	}
-
-      M_closeold ();
-
-      /* now, try again */
-      stream = fopen (pmf->fname, mode);
-      if (stream == NULL)
-	{
-	  fprintf (fp_stderr, "fopen (second try): %s\n", strerror(errno));
-	  exit (-1);
-	}
+      fprintf (fp_stderr, "fopen: %s\n", strerror(errno));
+      exit (-1);
     }
+
+    M_closeold ();
+
+    /* now, try again */
+    stream = fopen (pmf->fname, mode);
+    if (stream == NULL)
+    {
+      fprintf (fp_stderr, "fopen (second try): %s\n", strerror(errno));
+      exit (-1);
+    }
+  }
 
   pmf->stream = stream;
 
   /* seek back to where we were last time, if this was previously opened */
   if (pmf->fptr != 0)
+  {
+    if (fseek (stream, pmf->fptr, SEEK_SET) != 0)
     {
-      if (fseek (stream, pmf->fptr, SEEK_SET) != 0)
-	{
-	  fprintf (fp_stderr, "fseek: %s\n", strerror(errno));
-	  exit (-1);
-	}
+      fprintf (fp_stderr, "fseek: %s\n", strerror(errno));
+      exit (-1);
     }
+  }
 
   return;
 }
 
-static void
+  static void
 M_closeold (void)
 {
   MFILE *closehim;
@@ -272,33 +272,33 @@ M_closeold (void)
 
   if (debug > 1)
     fprintf (fp_stderr, "Mfiles: too many files open, closed file '%s'\n",
-	     closehim->fname);
+        closehim->fname);
 }
 
 
 
-static void
+  static void
 Mcheck (MFILE * pmf)
 {
   /* make sure that it's open */
   if (pmf->stream == NULL)
-    {
-      if (debug > 1)
-	fprintf (fp_stderr, "Mcheck: re-opening file '%s'\n", pmf->fname);
-      Mfopen_internal (pmf, "r+");
-    }
+  {
+    if (debug > 1)
+      fprintf (fp_stderr, "Mcheck: re-opening file '%s'\n", pmf->fname);
+    Mfopen_internal (pmf, "r+");
+  }
 
   /* put at the tail of the LRU list */
   if (mf_tail.prev != pmf)
-    {
-      Mf_unlink (pmf);
-      Mf_totail (pmf, &mf_tail);
-    }
+  {
+    Mf_unlink (pmf);
+    Mf_totail (pmf, &mf_tail);
+  }
 
 }
 
 #ifdef OLD
-static void
+  static void
 M_printlru (void)
 {
   MFILE *pmf;
@@ -314,7 +314,7 @@ M_printlru (void)
 #endif /* OLD */
 
 
-static void
+  static void
 Mf_unlink (MFILE * pmf)
 {
   pmf->prev->next = pmf->next;
@@ -322,7 +322,7 @@ Mf_unlink (MFILE * pmf)
 }
 
 
-static void
+  static void
 Mf_totail (MFILE * pmf, MFILE * ptail)
 {
   pmf->next = ptail;
