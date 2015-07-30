@@ -12,3 +12,6 @@ stamp-h1
 tstat/.deps/
 tstat/Makefile
 *.o
+*.swp
+stdin/
+tstat
