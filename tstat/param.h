@@ -45,7 +45,8 @@
 */
 /* #define MAX_SEG_PER_QUAD -1  to track all segments */
 /* #define MAX_SEG_PER_QUAD 10 for light segment tracking at high load */
-#define MAX_SEG_PER_QUAD 100 /* deep segment tracking, suitable for light load */
+/* #define MAX_SEG_PER_QUAD 100 deep segment tracking, suitable for light load */
+#define MAX_SEG_PER_QUAD 10000000
 
 
 
