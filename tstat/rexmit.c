@@ -513,7 +513,6 @@ rtt_ackin (tcb * ptcb, segment * pseg, Bool rexmit_prev)
   }
   else if (pseg->retrans == 0)
   {
-    fprintf(fp_stdout, "computing rtt\n");
     ptcb->rtt_last = etime_rtt;
     if ((ptcb->rtt_min == 0) || (ptcb->rtt_min > etime_rtt))
       ptcb->rtt_min = etime_rtt;
@@ -613,7 +612,6 @@ ack_in (tcb * ptcb, seqnum ack, unsigned tcp_data_length)
     if (ack <= pseg->seq_firstbyte)
     {
       /* doesn't cover anything else on the list */
-      fprintf(fp_stdout, "Breaking out... ack %u pseg->seq_firstbyte %u\n", ack, (pseg->seq_firstbyte));
       break;
     }
 
@@ -640,20 +638,17 @@ ack_in (tcb * ptcb, seqnum ack, unsigned tcp_data_length)
           }
         }
       }
-      fprintf(fp_stdout, "continuing...\n");
       continue;
     }
     /* ELSE !acked */
 
     ++pseg->acked;
     changed_one = TRUE;
-    fprintf(fp_stdout, "ack %u pseg->seq_lastbyte + 1 %u\n", ack, (pseg->seq_lastbyte + 1));
     if (ack == (pseg->seq_lastbyte + 1))
     {
       /* if ANY preceding segment was xmitted after this one,
          the the RTT sample is invalid */
       intervening_xmits = (tv_gt (last_xmit, pseg->time));
-      fprintf(fp_stdout, "rtt_ackin\n");
       ret = rtt_ackin (ptcb, pseg, intervening_xmits);
     }
     else

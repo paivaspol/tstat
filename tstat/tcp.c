@@ -1188,10 +1188,7 @@ tcp_flow_stat (struct ip * pip, struct tcphdr * ptcp, void *plast, int *dir)
   {
     char *src = strdup(inet_ntoa(tp_in.addr_pair.a_address.un.ip4));
     char *dst = strdup(inet_ntoa(tp_in.addr_pair.b_address.un.ip4));
-    fprintf(fp_stdout, "src: %s dst: %s\n", src, dst);
-    fprintf(fp_stdout, "port 1: %d, port 2: %d\n", th_sport, th_dport);
-    fprintf(fp_packet_rtt, "%s %s ", src, dst);
-    fprintf(fp_stdout, "In tcp.c, executing ack_in seq number %u\n", th_ack);
+    fprintf(fp_packet_rtt, "%s %d %s %d ", src, th_sport, dst, th_dport);
     ack_type = ack_in (otherdir, th_ack, tcp_data_length);
   }
 
