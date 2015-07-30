@@ -701,7 +701,6 @@ tcp_flow_stat (struct ip * pip, struct tcphdr * ptcp, void *plast, int *dir)
   /* convert interesting fields to local byte order */
   th_seq = ntohl (ptcp->th_seq);
   th_ack = ntohl (ptcp->th_ack);
-  fprintf(fp_stdout, "seq: %" PRIu32 " ack: %" PRIu32 "\n", ptcp->th_seq, ptcp->th_ack);
   th_sport = ntohs (ptcp->th_sport);
   th_dport = ntohs (ptcp->th_dport);
   th_win = ntohs (ptcp->th_win);

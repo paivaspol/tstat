@@ -2123,8 +2123,6 @@ static int ProcessPacket(struct timeval *pckt_time,
         return 0;
     }
 
-    fprintf(fp_stdout, "Received an IP packet.\n");
-
     /* If it's IP-over-IP, skip the external IP header */
     if (PIP_ISV4(pip) && pip->ip_p == IPPROTO_IPIP)
      {
@@ -2153,7 +2151,6 @@ static int ProcessPacket(struct timeval *pckt_time,
     if ( (ptcp = gettcp (pip, &plast)) != NULL)
     {
       ++tcp_packet_count;
-      fprintf(fp_stdout, "a packet (1)\n");
       flow_stat_code = tcp_flow_stat (pip, ptcp, plast, &dir);
       if ( flow_stat_code!=FLOW_STAT_DUP && 
           flow_stat_code!=FLOW_STAT_SHORT )
