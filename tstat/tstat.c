@@ -284,6 +284,7 @@ FILE *fp_lognc = NULL;
 FILE *fp_rtp_logc = NULL;
 FILE *fp_skype_logc = NULL;
 FILE *fp_udp_logc = NULL;
+FILE *fp_packet_rtt = NULL;
 #if defined(MSN_CLASSIFIER) || defined(YMSG_CLASSIFIER) || defined(XMPP_CLASSIFIER)
 FILE *fp_chat_logc = NULL;
 FILE *fp_chat_log_msg = NULL;
@@ -1474,6 +1475,7 @@ create_new_outfiles (char *input_filename, Bool reuse_dir)
       write_log_header(fp_logc, LOG_TCP_COMPLETE);
   }
 
+  reopen_logfile(&fp_packet_rtt, basename, "log_packet_rtt");
 
   if (LOG_IS_ENABLED(LOG_TCP_NOCOMPLETE)) {
       reopen_logfile(&fp_lognc,basename,"log_tcp_nocomplete");
@@ -2097,7 +2099,6 @@ static int ProcessPacket(struct timeval *pckt_time,
     //    continue;
     //  fprintf(fp_stderr,"%f \n", elapsed (last_packet, current_time));
 
-
     /* quick sanity check, better be an IPv4/v6 packet */
     if (!PIP_ISV4 (pip) && !PIP_ISV6 (pip))
     {
@@ -2121,6 +2122,8 @@ static int ProcessPacket(struct timeval *pckt_time,
 #endif
         return 0;
     }
+
+    fprintf(fp_stdout, "Received an IP packet.\n");
 
     /* If it's IP-over-IP, skip the external IP header */
     if (PIP_ISV4(pip) && pip->ip_p == IPPROTO_IPIP)
@@ -2148,32 +2151,33 @@ static int ProcessPacket(struct timeval *pckt_time,
     flow_stat_code = FLOW_STAT_NONE;  /* No flow (and dup) check done yet */
 
     if ( (ptcp = gettcp (pip, &plast)) != NULL)
-     {
-        ++tcp_packet_count;
-        flow_stat_code = tcp_flow_stat (pip, ptcp, plast, &dir);
-	if ( flow_stat_code!=FLOW_STAT_DUP && 
-	     flow_stat_code!=FLOW_STAT_SHORT )
-	   tcp_header_stat (ptcp, pip);
-     }	   
+    {
+      ++tcp_packet_count;
+      fprintf(fp_stdout, "a packet (1)\n");
+      flow_stat_code = tcp_flow_stat (pip, ptcp, plast, &dir);
+      if ( flow_stat_code!=FLOW_STAT_DUP && 
+          flow_stat_code!=FLOW_STAT_SHORT )
+        tcp_header_stat (ptcp, pip);
+    }	   
     else if (do_udp)
-     {
-        /* look for a UDP header */
-        if ((pudp = getudp (pip, &plast)) != NULL)
-	 { 
-           flow_stat_code = udp_flow_stat (pip, pudp, plast);
-	   if ( flow_stat_code!=FLOW_STAT_DUP && 
-	        flow_stat_code!=FLOW_STAT_SHORT )
-	      udp_header_stat (pudp, pip);
-	 }
-     }
+    {
+      /* look for a UDP header */
+      if ((pudp = getudp (pip, &plast)) != NULL)
+      { 
+        flow_stat_code = udp_flow_stat (pip, pudp, plast);
+        if ( flow_stat_code!=FLOW_STAT_DUP && 
+            flow_stat_code!=FLOW_STAT_SHORT )
+          udp_header_stat (pudp, pip);
+      }
+    }
 
     if (flow_stat_code != FLOW_STAT_DUP)
      {
        if (!(PIP_ISV6 (pip)))
-        {
-          /* Collect IPv4 histograms only on not duplicated flows */
-          ip_histo_stat(pip);
-	} 
+       {
+         /* Collect IPv4 histograms only on not duplicated flows */
+         ip_histo_stat(pip);
+       } 
      }
 
     if (flow_stat_code != FLOW_STAT_OK)
@@ -2472,6 +2476,7 @@ ProcessFile (char *filename, Bool last)
 	{
 #ifdef GROK_LIVE_TCPDUMP
 	case ETH:
+    fprintf(fp_stdout, "I'm here!\n");
 	  ppread = (*file_formats[ETH_LIVE].test_func) (filename);
 	  if (debug > 0)
 	    fprintf(fp_stderr, "Capturing using '%s' (%s)\n",
