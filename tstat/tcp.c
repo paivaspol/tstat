@@ -713,7 +713,6 @@ tcp_flow_stat (struct ip * pip, struct tcphdr * ptcp, void *plast, int *dir)
   /* if the connection is not to be analyzed return a NULL */
   if (ptph_ptr == NULL)
   {
-    fprintf(fp_stdout, "here...\n");
     return (FLOW_STAT_NULL);
   }
 
@@ -723,7 +722,6 @@ tcp_flow_stat (struct ip * pip, struct tcphdr * ptcp, void *plast, int *dir)
 
   if (ptp_save == NULL)
   {
-    fprintf(fp_stdout, "here\n");
     return (FLOW_STAT_NULL);
   }
 
@@ -1395,7 +1393,6 @@ tcp_flow_stat (struct ip * pip, struct tcphdr * ptcp, void *plast, int *dir)
     *ptph_ptr = ptph_save->next;
     ptph_release (ptph_tmp);
   }
-  fprintf(fp_stdout, "\n");
   return (FLOW_STAT_OK);
 }
 
