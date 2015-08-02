@@ -498,7 +498,7 @@ rtt_ackin (tcb * ptcb, segment * pseg, Bool rexmit_prev)
   enum t_ack ret;
 
   /* how long did it take */
-  etime_rtt = elapsed (pseg->time, current_time);
+  etime_rtt = elapsed (pseg->time, current_time); // The units is in micro-seconds.
   //fprintf (fp_stdout, "%f\n",etime_rtt);
   if (rexmit_prev)
   {
@@ -535,7 +535,7 @@ rtt_ackin (tcb * ptcb, segment * pseg, Bool rexmit_prev)
     ptcb->rtt_sum2 += etime_rtt * etime_rtt;
     ++ptcb->rtt_count;
     ret = NORMAL;
-    fprintf(fp_packet_rtt, "%.f\n", etime_rtt);
+    fprintf(fp_packet_rtt, "%.lf %.f\n", time2double(current_time), etime_rtt);
   }
   else
   {
