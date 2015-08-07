@@ -98,18 +98,18 @@ Used only if WIPE_TCP_SINGLETON is defined
 
 /* maximum number of concurrent TCP connection stored in the vector TTP 
 Increase this number on high speed network will help ...*/
-#define MAX_TCP_PAIRS 180000
+#define MAX_TCP_PAIRS 180000000
 /* Each time the garbage collection is fired, it scans MAX_TCP_PAIRS_BURST tcp flows */
 // #define MAX_TCP_PAIRS_BURST (MAX_TCP_PAIRS / GARBAGE_SPLIT_RATIO)
 
 /* maximum number of concurrent UDP connection stored in the vector UTP 
 Increase this number on high speed network will help ...*/
-#define MAX_UDP_PAIRS 360000
+#define MAX_UDP_PAIRS 36000000
 /* Each time the garbage collection is fired, it scans MAX_UDP_PAIRS_BURST upd flows */
 // #define MAX_UDP_PAIRS_BURST (MAX_UDP_PAIRS / GARBAGE_SPLIT_RATIO)
 
 /* max depth of the linear serch in the previous vector... */
-#define LIST_SEARCH_DEPT 200
+#define LIST_SEARCH_DEPT 10000000
 
 /* connection records are stored in a hash table.  Buckets are linked	*/
 /* lists sorted by most recent access.					*/
