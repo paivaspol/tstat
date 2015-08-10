@@ -1,4 +1,4 @@
-Makefile
+Makefile*
 config.h
 config.log
 config.status
@@ -15,3 +15,10 @@ tstat/Makefile
 *.swp
 stdin/
 tstat
+INSTALL
+aclocal.m4
+config.h.in
+config/*
+configure
+libtstat-demo/*
+
