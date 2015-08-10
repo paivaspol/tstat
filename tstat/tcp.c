@@ -242,8 +242,8 @@ CopyAddr (tcp_pair_addrblock * ptpa,
   {				/* V4 */
     IP_COPYADDR (&ptpa->a_address, *IPV4ADDR2ADDR (&pip->ip_src));
     IP_COPYADDR (&ptpa->b_address, *IPV4ADDR2ADDR (&pip->ip_dst));
-    ptpa->a_address.un.ip4.s_addr &= 0xFFFFFF;
-    ptpa->b_address.un.ip4.s_addr &= 0xFFFFFF; // Only consider the /24 prefix.
+    //ptpa->a_address.un.ip4.s_addr &= 0xFFFFFF;
+    //ptpa->b_address.un.ip4.s_addr &= 0xFFFFFF; // Only consider the /24 prefix.
     //fprintf(fp_stdout, "Converted ips %u, %u\n", ptpa->a_address.un.ip4.s_addr, ptpa->b_address.un.ip4.s_addr);
     /* fill in the hashed address */
     ptpa->hash = ptpa->a_address.un.ip4.s_addr
