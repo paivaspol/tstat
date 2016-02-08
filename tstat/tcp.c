@@ -312,8 +312,9 @@ WhichDir (tcp_pair_addrblock * ptpa1, tcp_pair_addrblock * ptpa2)
 SameConn (tcp_pair_addrblock * ptpa1, tcp_pair_addrblock * ptpa2, int *pdir)
 {
   /* if the hash values are different, they can't be the same */
-  if (ptpa1->hash != ptpa2->hash)
+  if (ptpa1->hash != ptpa2->hash) {
     return (0);
+  }
 
   /* OK, they hash the same, are they REALLY the same function */
   *pdir = WhichDir (ptpa1, ptpa2);
@@ -550,9 +551,9 @@ FindTTP (struct ip *pip, struct tcphdr *ptcp, int *pdir)
 
   /* Didn't find it, make a new one, if possible */
 
-  if (!(SYN_SET (ptcp) && !ACK_SET (ptcp)))
+  /*if (!(SYN_SET (ptcp) && !ACK_SET (ptcp)))
   {
-    /* the new connection must begin with a SYN */
+    // the new connection must begin with a SYN
     if (debug > 1)
     {
       fprintf (fp_stdout, 
@@ -562,7 +563,7 @@ FindTTP (struct ip *pip, struct tcphdr *ptcp, int *pdir)
     add_histo (profile_trash, 0);
 
     return (NULL);
-  }
+  }*/
 
   if (debug > 1)
   {
@@ -596,8 +597,6 @@ FindTTP (struct ip *pip, struct tcphdr *ptcp, int *pdir)
       //printf("cpu:%.2f max:%.2f\n", cpu, max_cpu);
     }
   }
-
-
 
   // we fire it at DOUBLE rate, but actually clean only those > TCP_IDLE_TIME
   if (elapsed (last_cleaned, current_time) > GLOBALS.GC_Fire_Time)
@@ -646,7 +645,6 @@ FindTTP (struct ip *pip, struct tcphdr *ptcp, int *pdir)
   *pptph_head = ptph;
 
   *pdir = C2S;
-
 
   /* return the new ptph */
   return (pptph_head);
@@ -810,11 +808,11 @@ tcp_flow_stat (struct ip * pip, struct tcphdr * ptcp, void *plast, int *dir)
         (ptp_save->s2c.syn_count > 0
          && ptp_save->c2s.syn_count > 0));
 
-    /* free up memory for this flow */
+    // free up memory for this flow
 
     free_tp (ptp_save);
 
-    /* free up the first element of the list pointer by the hash */
+    // free up the first element of the list pointer by the hash 
     ptph_tmp = ptph_save;
     *(ptph_save->ttp_ptr) = NULL;
     *ptph_ptr = ptph_save->next;
@@ -3916,9 +3914,9 @@ update_conn_log_mm_v2(tcp_pair *ptp_save, tcb *pab, tcb *pba)
   void
 free_tp (tcp_pair * ptp_save)
 {
+  fprintf(fp_stdout, "here\n");
   int i;
   /* free up memory for the flow stats */
-
   /* for each quad then for each segment in each quad... */
   for (i = 0; i < 4; i++)
   {

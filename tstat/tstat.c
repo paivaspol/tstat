@@ -2474,7 +2474,6 @@ int tstat_init(char *config_fname) {
         {
 #ifdef GROK_LIVE_TCPDUMP
           case ETH:
-            fprintf(fp_stdout, "I'm here!\n");
             ppread = (*file_formats[ETH_LIVE].test_func) (filename);
             if (debug > 0)
               fprintf(fp_stderr, "Capturing using '%s' (%s)\n",
